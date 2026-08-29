@@ -29,6 +29,7 @@ import analyticsRoutes from './modules/analytics/analytics.routes';
 import auditLogsRoutes from './modules/audit-logs/audit-logs.routes';
 import cdsRoutes from './modules/cds/cds.routes';
 import interopRoutes from './modules/interop/interop.routes';
+import telemetryRoutes from './modules/telemetry/telemetry.routes';
 
 const app: Express = express();
 
@@ -78,6 +79,7 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/audit-logs', auditLogsRoutes);
 app.use('/api/cds', cdsRoutes);
 app.use('/api/interop', interopRoutes);
+app.use('/api/telemetry', telemetryRoutes);
 
 // Fallback 404 handler for undefined API routes
 app.use('/api/*', (req: Request, res: Response) => {
