@@ -27,6 +27,7 @@ import insuranceRoutes from './modules/insurance/insurance.routes';
 import notificationsRoutes from './modules/notifications/notifications.routes';
 import analyticsRoutes from './modules/analytics/analytics.routes';
 import auditLogsRoutes from './modules/audit-logs/audit-logs.routes';
+import cdsRoutes from './modules/cds/cds.routes';
 
 const app: Express = express();
 
@@ -74,6 +75,7 @@ app.use('/api/insurance', insuranceRoutes);
 app.use('/api/notifications', notificationsRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/audit-logs', auditLogsRoutes);
+app.use('/api/cds', cdsRoutes);
 
 // Fallback 404 handler for undefined API routes
 app.use('/api/*', (req: Request, res: Response) => {
