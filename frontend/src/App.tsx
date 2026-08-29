@@ -32,6 +32,7 @@ import { BillingPage } from './pages/patient/BillingPage';
 import { InsurancePage } from './pages/patient/InsurancePage';
 import { PatientProfilePage, HealthProfilePage } from './pages/patient/ProfileAndHealthPages';
 import { NotificationsPage } from './pages/patient/NotificationsPage';
+import { RemoteMonitoringPage } from './pages/patient/RemoteMonitoringPage';
 
 // Doctor Pages
 import { DoctorDashboard } from './pages/doctor/DoctorDashboard';
@@ -108,6 +109,7 @@ export const App: React.FC = () => {
         <Route path="medications" element={<MedicationsPage />} />
         <Route path="lab-reports" element={<LabReportsPage />} />
         <Route path="documents" element={<DocumentsPage />} />
+        <Route path="telemetry" element={<RemoteMonitoringPage />} />
         <Route path="billing" element={<BillingPage />} />
         <Route path="insurance" element={<InsurancePage />} />
         <Route path="profile" element={<PatientProfilePage />} />

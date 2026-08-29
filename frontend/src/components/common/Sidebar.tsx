@@ -36,6 +36,7 @@ export const Sidebar: React.FC<{ role: UserRole }> = ({ role }) => {
     { to: '/patient/book-appointment', label: 'Book Appointment', icon: <Clock className="h-4 w-4" /> },
     { to: '/patient/records', label: 'Medical Records', icon: <FileText className="h-4 w-4" /> },
     { to: '/patient/vitals', label: 'Vital Signs & Trends', icon: <Activity className="h-4 w-4" /> },
+    { to: '/patient/telemetry', label: 'Wearable Telemetry (RPM)', icon: <Activity className="h-4 w-4" /> },
     { to: '/patient/prescriptions', label: 'Prescriptions', icon: <Pill className="h-4 w-4" /> },
     { to: '/patient/medications', label: 'Medications & Routine', icon: <Heart className="h-4 w-4" /> },
     { to: '/patient/lab-reports', label: 'Laboratory Reports', icon: <FlaskConical className="h-4 w-4" /> },
