@@ -1,0 +1,75 @@
+import { AllergyCrossReactivityRule } from './types';
+
+export const ALLERGY_CROSS_REACTIVITY_DATA: AllergyCrossReactivityRule[] = [
+  {
+    allergenClass: 'PENICILLIN',
+    relatedDrugClasses: [
+      'AMOXICILLIN',
+      'AMPICILLIN',
+      'PIPERACILLIN',
+      'TICARCILLIN',
+      'CEPHALOSPORINS_1ST_GEN (Cephalexin, Cefazolin)',
+      'CEPHALOSPORINS_2ND_GEN (Cefaclor, Cefuroxime)',
+      'CARBAPENEMS (Meropenem, Imipenem)',
+    ],
+    crossReactivityRatePct: 2.5,
+    mechanism: 'Cross-reactivity between penicillins and early generation cephalosporins is primarily driven by shared R1 side chain chemical structures rather than the central beta-lactam ring. 3rd/4th generation cephalosporins (Ceftriaxone, Cefepime) have distinct side chains with <1% cross-reactivity.',
+    clinicalPresentation: ['IgE-mediated immediate urticaria', 'Angioedema', 'Bronchospasm', 'Anaphylaxis', 'Maculopapular exanthem'],
+    safeAlternatives: ['Azithromycin', 'Clarithromycin', 'Doxycycline', 'Fluoroquinolones (Levofloxacin)', 'Vancomycin', 'Aztreonam (except if ceftazidime allergy due to identical side chain)'],
+  },
+  {
+    allergenClass: 'SULFONAMIDE_ANTIBIOTICS',
+    relatedDrugClasses: [
+      'SULFAMETHOXAZOLE',
+      'SULFADIAZINE',
+      'SULFASALAZINE',
+      'NON_ANTIBIOTIC_SULFONAMIDES (Furosemide, Hydrochlorothiazide, Celecoxib, Glimepiride)',
+    ],
+    crossReactivityRatePct: 3.8,
+    mechanism: 'Sulfonamide antibiotics possess an arylamine group at N4 position and a 5- or 6-membered aromatic ring at N1 position responsible for immunogenic hydroxylamine metabolites. Non-antibiotic sulfonamides (diuretics, sulfonylureas, celecoxib) lack this N4 arylamine and do not exhibit true immunological cross-reactivity.',
+    clinicalPresentation: ['Morbilliform drug eruption', 'Delayed cutaneous hypersensitivity', 'Stevens-Johnson syndrome (SJS) / Toxic Epidermal Necrolysis (TEN)', 'Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS)'],
+    safeAlternatives: ['Nitrofurantoin', 'Fosfomycin', 'Beta-lactams', 'Fluoroquinolones for UTI'],
+  },
+  {
+    allergenClass: 'NSAID_ASPIRIN',
+    relatedDrugClasses: [
+      'IBUPROFEN',
+      'NAPROXEN',
+      'KETOROLAC',
+      'DICLOFENAC',
+      'INDOMETHACIN',
+      'MELOXICAM',
+    ],
+    crossReactivityRatePct: 85.0,
+    mechanism: 'Non-immunological pseudo-allergic cross-reactivity caused by COX-1 enzyme inhibition, shunting arachidonic acid metabolism into the 5-lipoxygenase pathway and causing overproduction of cysteinyl leukotrienes (Aspirin-Exacerbated Respiratory Disease - AERD).',
+    clinicalPresentation: ['Severe bronchospasm', 'Rhinorrhea and nasal polyposis', 'Periorbital angioedema', 'Flushing and urticaria'],
+    safeAlternatives: ['Acetaminophen / Paracetamol (at doses <=1000 mg/day)', 'Highly selective COX-2 inhibitors (Celecoxib) with supervised challenge', 'Multimodal non-opioid analgesics'],
+  },
+  {
+    allergenClass: 'OPIOID_PHENANTHRENE',
+    relatedDrugClasses: [
+      'MORPHINE',
+      'CODEINE',
+      'OXYCODONE',
+      'HYDROMORPHONE',
+      'HYDROCODONE',
+    ],
+    crossReactivityRatePct: 15.0,
+    mechanism: 'Phenanthrene class opioids cause direct, non-IgE mast cell degranulation via MRGPRX2 receptors, causing pseudo-allergic histamine release. True IgE allergies are rare. Synthetic opioids (Phenylpiperidines like Fentanyl, Phenylheptylamines like Methadone) have distinct chemical scaffolds.',
+    clinicalPresentation: ['Pruritus', 'Flushing and mild urticaria at injection site', 'Hypotension secondary to histamine release', 'Bronchospasm (rare true IgE)'],
+    safeAlternatives: ['Fentanyl (synthetic phenylpiperidine)', 'Remifentanil', 'Methadone (diphenylheptane)', 'Acetaminophen / Ketamine infusions'],
+  },
+  {
+    allergenClass: 'RADIOCONTRAST_IODINATED',
+    relatedDrugClasses: [
+      'IOHEXOL',
+      'IOPAMIDOL',
+      'IODIXANOL',
+      'IOVERSOL',
+    ],
+    crossReactivityRatePct: 12.0,
+    mechanism: 'Non-IgE direct chemotoxic activation of complement cascade and basophil degranulation related to hyperosmolality and molecular structure. Not related to seafood or topical iodine allergies.',
+    clinicalPresentation: ['Immediate flushing', 'Nausea', 'Generalized urticaria', 'Laryngeal edema', 'Severe anaphylactoid shock'],
+    safeAlternatives: ['Pre-medication protocol with oral prednisone 50mg (at 13h, 7h, 1h) and diphenhydramine 50mg', 'Use low-osmolar or iso-osmolar non-ionic contrast agents', 'Alternative imaging (MRI without gadolinium or Ultrasound)'],
+  },
+];
