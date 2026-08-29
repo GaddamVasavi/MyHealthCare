@@ -42,6 +42,7 @@ import { DoctorPatientsPage } from './pages/doctor/DoctorPatientsPage';
 import { DoctorClinicalRecordPage } from './pages/doctor/DoctorClinicalRecordPage';
 import { DoctorPrescriptionPage, DoctorLabOrdersPage } from './pages/doctor/PrescriptionsAndLabPages';
 import { ClinicalDecisionSupportPage } from './pages/doctor/ClinicalDecisionSupportPage';
+import { DicomImagingViewerPage } from './pages/doctor/DicomImagingViewerPage';
 
 // Admin Pages
 import { AdminDashboard } from './pages/admin/AdminDashboard';
@@ -49,6 +50,7 @@ import { UserManagementPage } from './pages/admin/UserManagementPage';
 import { AuditLogsPage } from './pages/admin/AuditLogsPage';
 import { ReportsAnalyticsPage, AppointmentManagementPage, BillingManagementPage } from './pages/admin/ReportsAndManagementPages';
 import { InteropHubPage } from './pages/admin/InteropHubPage';
+import { PopulationHealthPage } from './pages/admin/PopulationHealthPage';
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -134,6 +136,7 @@ export const App: React.FC = () => {
         <Route path="prescriptions" element={<DoctorPrescriptionPage />} />
         <Route path="lab-orders" element={<DoctorLabOrdersPage />} />
         <Route path="cds" element={<ClinicalDecisionSupportPage />} />
+        <Route path="imaging" element={<DicomImagingViewerPage />} />
         <Route path="profile" element={<DoctorSchedulePage />} />
       </Route>
 
@@ -154,6 +157,7 @@ export const App: React.FC = () => {
         <Route path="billing" element={<BillingManagementPage />} />
         <Route path="reports" element={<ReportsAnalyticsPage />} />
         <Route path="interop" element={<InteropHubPage />} />
+        <Route path="population-health" element={<PopulationHealthPage />} />
         <Route path="audit-logs" element={<AuditLogsPage />} />
       </Route>
 
