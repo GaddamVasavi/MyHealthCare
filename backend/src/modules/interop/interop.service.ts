@@ -7,14 +7,14 @@ export class InteropService {
    * Export Patient Data as FHIR R4 Bundle
    */
   public static async exportPatientFHIRBundle(patientId: string) {
-    const patient = await prisma.patient.findUnique({
+    const patient: any = await prisma.patient.findUnique({
       where: { id: patientId },
       include: {
         user: true,
         address: true,
         conditions: true,
         allergies: true,
-        vitals: { orderBy: { recordedAt: 'desc' }, take: 10 },
+        vitalSigns: { orderBy: { recordedAt: 'desc' }, take: 10 },
         medications: { where: { status: 'ACTIVE' } },
       },
     });

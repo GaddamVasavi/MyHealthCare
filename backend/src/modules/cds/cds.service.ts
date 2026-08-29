@@ -17,28 +17,28 @@ export class CDSService {
    * Run full clinical decision support evaluation on a patient
    */
   public static async analyzePatient(req: CDSAnalysisRequest): Promise<CDSAnalysisResponse> {
-    const patient = await prisma.patient.findUnique({
+    const patient: any = await prisma.patient.findUnique({
       where: { id: req.patientId },
       include: {
         healthProfile: true,
         allergies: true,
         conditions: true,
         medications: { where: { status: 'ACTIVE' } },
-        vitals: { orderBy: { recordedAt: 'desc' }, take: 5 },
+        vitalSigns: { orderBy: { recordedAt: 'desc' }, take: 5 },
       },
     });
 
     const activeMeds = [
-      ...(patient?.medications.map((m) => m.name.toLowerCase()) || []),
-      ...(req.medications?.map((m) => m.toLowerCase()) || []),
+      ...(patient?.medications.map((m: any) => m.name.toLowerCase()) || []),
+      ...(req.medications?.map((m: any) => m.toLowerCase()) || []),
     ];
 
     const activeAllergies = [
-      ...(patient?.allergies.map((a) => a.allergen.toUpperCase()) || []),
-      ...(req.allergies?.map((a) => a.toUpperCase()) || []),
+      ...(patient?.allergies.map((a: any) => a.allergen.toUpperCase()) || []),
+      ...(req.allergies?.map((a: any) => a.toUpperCase()) || []),
     ];
 
-    const latestVital = patient?.vitals[0] || req.vitals;
+    const latestVital = patient?.vitalSigns?.[0] || req.vitals;
 
     // 1. Evaluate Drug Interactions
     const detectedInteractions: DrugInteractionRule[] = [];

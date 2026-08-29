@@ -8,16 +8,16 @@ export class TelemetryService {
    * Synthesize & retrieve real-time streaming telemetry for a patient
    */
   public static async getPatientRemoteMonitoring(patientId: string): Promise<RemotePatientMetrics> {
-    const patient = await prisma.patient.findUnique({
+    const patient: any = await prisma.patient.findUnique({
       where: { id: patientId },
-      include: { vitals: { orderBy: { recordedAt: 'desc' }, take: 1 } },
+      include: { vitalSigns: { orderBy: { recordedAt: 'desc' }, take: 1 } },
     });
 
     if (!patient) {
       throw { statusCode: 404, message: 'Patient not found', code: 'NOT_FOUND' };
     }
 
-    const latestVital = patient.vitals[0];
+    const latestVital = patient.vitalSigns?.[0];
 
     // Generate realistic 10-second ECG waveform (2500 points at 250 Hz)
     const ecgSamples: ECGWaveformSample[] = [];

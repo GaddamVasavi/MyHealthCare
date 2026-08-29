@@ -30,6 +30,10 @@ import auditLogsRoutes from './modules/audit-logs/audit-logs.routes';
 import cdsRoutes from './modules/cds/cds.routes';
 import interopRoutes from './modules/interop/interop.routes';
 import telemetryRoutes from './modules/telemetry/telemetry.routes';
+import terminologyRoutes from './modules/terminology/terminology.routes';
+import imagingRoutes from './modules/imaging/imaging.routes';
+import epidemiologyRoutes from './modules/epidemiology/epidemiology.routes';
+import medicalKbRoutes from './modules/medical-kb/medicalKb.routes';
 
 const app: Express = express();
 
@@ -80,6 +84,10 @@ app.use('/api/audit-logs', auditLogsRoutes);
 app.use('/api/cds', cdsRoutes);
 app.use('/api/interop', interopRoutes);
 app.use('/api/telemetry', telemetryRoutes);
+app.use('/api/terminology', terminologyRoutes);
+app.use('/api/imaging', imagingRoutes);
+app.use('/api/epidemiology', epidemiologyRoutes);
+app.use('/api/medical-kb', medicalKbRoutes);
 
 // Fallback 404 handler for undefined API routes
 app.use('/api/*', (req: Request, res: Response) => {

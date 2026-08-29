@@ -55,6 +55,7 @@ export const Sidebar: React.FC<{ role: UserRole }> = ({ role }) => {
     { to: '/doctor/patients', label: 'Assigned Patients', icon: <Users className="h-4 w-4" /> },
     { to: '/doctor/clinical-notes', label: 'Clinical Records', icon: <FileText className="h-4 w-4" /> },
     { to: '/doctor/cds', label: 'Clinical Decision Support', icon: <Activity className="h-4 w-4" /> },
+    { to: '/doctor/imaging', label: 'DICOM PACS Viewer', icon: <FolderOpen className="h-4 w-4" /> },
     { to: '/doctor/prescriptions', label: 'Prescription Writer', icon: <Pill className="h-4 w-4" /> },
     { to: '/doctor/lab-orders', label: 'Laboratory Orders', icon: <FlaskConical className="h-4 w-4" /> },
     { to: '/doctor/profile', label: 'Doctor Profile', icon: <Stethoscope className="h-4 w-4" /> },
@@ -68,6 +69,7 @@ export const Sidebar: React.FC<{ role: UserRole }> = ({ role }) => {
     { to: '/admin/appointments', label: 'Appointments Oversight', icon: <Calendar className="h-4 w-4" /> },
     { to: '/admin/billing', label: 'Invoices & Payments', icon: <CreditCard className="h-4 w-4" /> },
     { to: '/admin/reports', label: 'Analytics & Reports', icon: <BarChart3 className="h-4 w-4" /> },
+    { to: '/admin/population-health', label: 'Population Health & HEDIS', icon: <Heart className="h-4 w-4" /> },
     { to: '/admin/interop', label: 'FHIR & HL7 Hub', icon: <FileText className="h-4 w-4" /> },
     { to: '/admin/audit-logs', label: 'HIPAA Audit Trail', icon: <ShieldAlert className="h-4 w-4" /> },
   ];

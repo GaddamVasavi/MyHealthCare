@@ -26,7 +26,7 @@ export class CDSController {
     try {
       const { medications } = req.body as { medications: string[] };
       const normalized = (medications || []).map((m) => m.toLowerCase());
-      const detected = [];
+      const detected: any[] = [];
 
       for (let i = 0; i < normalized.length; i++) {
         for (let j = i + 1; j < normalized.length; j++) {
