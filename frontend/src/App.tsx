@@ -47,6 +47,7 @@ import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { UserManagementPage } from './pages/admin/UserManagementPage';
 import { AuditLogsPage } from './pages/admin/AuditLogsPage';
 import { ReportsAnalyticsPage, AppointmentManagementPage, BillingManagementPage } from './pages/admin/ReportsAndManagementPages';
+import { InteropHubPage } from './pages/admin/InteropHubPage';
 
 export const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -150,6 +151,7 @@ export const App: React.FC = () => {
         <Route path="appointments" element={<AppointmentManagementPage />} />
         <Route path="billing" element={<BillingManagementPage />} />
         <Route path="reports" element={<ReportsAnalyticsPage />} />
+        <Route path="interop" element={<InteropHubPage />} />
         <Route path="audit-logs" element={<AuditLogsPage />} />
       </Route>
 

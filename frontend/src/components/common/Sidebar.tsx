@@ -67,6 +67,7 @@ export const Sidebar: React.FC<{ role: UserRole }> = ({ role }) => {
     { to: '/admin/appointments', label: 'Appointments Oversight', icon: <Calendar className="h-4 w-4" /> },
     { to: '/admin/billing', label: 'Invoices & Payments', icon: <CreditCard className="h-4 w-4" /> },
     { to: '/admin/reports', label: 'Analytics & Reports', icon: <BarChart3 className="h-4 w-4" /> },
+    { to: '/admin/interop', label: 'FHIR & HL7 Hub', icon: <FileText className="h-4 w-4" /> },
     { to: '/admin/audit-logs', label: 'HIPAA Audit Trail', icon: <ShieldAlert className="h-4 w-4" /> },
   ];
 
