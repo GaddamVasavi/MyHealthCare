@@ -40,6 +40,7 @@ import { DoctorAppointmentsPage } from './pages/doctor/DoctorAppointmentsPage';
 import { DoctorPatientsPage } from './pages/doctor/DoctorPatientsPage';
 import { DoctorClinicalRecordPage } from './pages/doctor/DoctorClinicalRecordPage';
 import { DoctorPrescriptionPage, DoctorLabOrdersPage } from './pages/doctor/PrescriptionsAndLabPages';
+import { ClinicalDecisionSupportPage } from './pages/doctor/ClinicalDecisionSupportPage';
 
 // Admin Pages
 import { AdminDashboard } from './pages/admin/AdminDashboard';
@@ -129,6 +130,7 @@ export const App: React.FC = () => {
         <Route path="clinical-notes" element={<DoctorClinicalRecordPage />} />
         <Route path="prescriptions" element={<DoctorPrescriptionPage />} />
         <Route path="lab-orders" element={<DoctorLabOrdersPage />} />
+        <Route path="cds" element={<ClinicalDecisionSupportPage />} />
         <Route path="profile" element={<DoctorSchedulePage />} />
       </Route>
 
